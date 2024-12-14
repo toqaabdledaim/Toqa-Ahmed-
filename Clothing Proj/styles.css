@@ -1,0 +1,411 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; 
+}
+
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #333;
+}
+
+
+body.dark-mode nav ul {
+    background-color: #222; /* Navbar color in dark mode */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/* Styling for the New Section */
+#new-section {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+}
+
+#new-section h2 {
+    font-size: 2em;
+    color: inherit;
+}
+
+#new-section p {
+    font-size: 1.2em;
+    color: inherit;
+}
+
+#new-section button {
+    background-color: #333;
+    color: white; 
+    border: 2px solid #fff;
+    border-radius: 4px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #new-section {
+    background-color: inherit;
+    color: #fff
+}
+
+#new-section button:active {
+    transform: scale(0.78);
+}
+
+#mode-toggle {
+    background-color: #333;
+    color: white; 
+    border: 2px solid #fff;
+    border-radius: 4px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+
+#mode-toggle:active {
+    transform: scale(0.78);
+}
+
+body:not(.dark-mode) #mode-toggle {
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text for light mode */
+    border: 2px solid #ccc; /* Light border */
+}
+
+body.dark-mode #mode-toggle {
+    background-color: #222; /* Dark background for dark mode */
+    color: #f4f4f4; /* Lighter text for dark mode */
+    border: 2px solid #444; /* Darker border */
+}
+
+#mode-toggle:hover {
+    background-color: #575757;
+    border-color: #ff4757;
+}
+
+nav ul li a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 0;
+    height: 3px; /* Height of the underline */
+    background-color: #ffffff; /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+nav ul li a:hover::after {
+    width: 100%; /* Underline expands to full width on hover */
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #444; /* Adjusted hover for dark mode */
+}
+
+header {
+    /* background-color: #fff; */
+    background-image: url(https://media.gucci.com/dynamic/b3c8/D8B07jELl2OMMNpzBmI73I22dBmFknQ0k0JXGygiGAdrDMHGashgZHAdO4V6qX2GkcRzoDDuJhJe0ZqyU1J2DuYz0LzBeDgi6Mm4eAlIpyTjB+EzC1nEQ6uRjkAW9zl2lm6ohPczBD2u3vpPtSE0D6AmtU248iPPGFb8p1pz9igXgHIfxE74Ov_odU3fN4UHmvv49c6lr81KQXjBKzaHAnHZ58MGSq+PjC+fcNhdnF8Ri8GP6pQnym1QNlZidHS34plKisBXWDRz7QoqXPnguodbBcN1E49_3d7MPgjhEn8VUzijF5ocb_3p+3eopvME+4qkgc9G1RA5B5u9DgsGbmTrEDk3mU+99Mz6II42sDN8FLioiRjClpxbfolFNYmZ/HP_Hero-FullBleed-Desktop_Gucci-GiftGiving-Nov24-ASE-240801-0001-0365_001_Default.png);
+    /* background-repeat: repeat-x; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    text-align: center;
+    padding: 250px 0;
+}
+
+header h1, header p {
+    color: #fff;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(80px); /* Start with a downward offset */
+    transition: all 0.6s ease-out; /* Smooth transition for the animation */
+}
+
+/* When the header becomes visible */
+header h1.visible, header p.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to normal position */
+}
+
+/* Add the fade-in animation */
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#search-form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#search-bar {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#search-form button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#search-form button:hover {
+    background-color: #45a049;
+}
+
+.highlight {
+    background-color: inherit;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position:static;
+    bottom: 0;
+    width: 100%;
+}
+
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+/* 
+.card{
+    display: inline-block;
+    border:2px solid black;
+    background-color: gray;
+} */
+
+.card-group { 
+    display: flex; 
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    margin: 1rem;
+} 
+.card { 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 2rem;
+    margin: 1rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-image {
+    position: absolute;
+    animation: rotateMove 5s linear infinite; /* Continuous rotation with no stop */
+    opacity: 0.8;
+    width: 50px; /* Set the desired width of the image */
+    height: 50px; /* Set the desired height of the image */
+}
+
+body.dark-mode .floating-image {
+    filter: invert(1) grayscale(100%) brightness(100%); /* Inverts the colors and converts to white */
+}
+
+.floating-image.left {
+    left: 10%;
+}
+
+.floating-image.right {
+    right: 10%;
+}
+
+/* Keyframe Animation for Continuous Rotation and Smooth Up/Down Movement */
+@keyframes rotateMove {
+    0% {
+        transform: rotate(0deg) translateY(0); /* Start with no rotation and no movement */
+    }
+    100% {
+        transform: rotate(360deg) translateY(0); /* Complete a full 360° rotation */
+    }
+}
+
+body.dark-mode .card {
+    border: 1px solid #444; 
+    background-color: #222; /* Dark mode card background */
+
+}
+
+.card-img { 
+    width: 100%; 
+    /* height: auto; */
+    height: 200px;
+    object-fit: fill;
+    border-bottom: 1px solid #ccc; 
+} 
+
+body.dark-mode .card-img {
+    border-bottom: 1px solid #444; 
+}
+
+.card-body { 
+    padding: 1rem;
+} 
+
+.card-text { 
+    font-size: 1rem; 
+    color: #333;
+}
+
+body.dark-mode .card-text {
+    color: #ccc; /* Dark mode card text color */
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}
+.card:hover { 
+    transform: translateY(-10px);
+}
+
+/* Light mode */
+.card.favorite {
+    border: 2px solid #ff4757;
+    background-color: #ffeaa7;
+}
+
+/* Dark mode */
+body.dark-mode .card.favorite {
+    border: 2px solid #ff6b6b;
+    background-color: #353b3c;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4c4b4b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#scrollToTop:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+}
+
+.card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #151617;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card .btn:hover {
+    background-color: #394444;
+}
+
+footer div {
+    text-align: center;
+    padding: 10px;
+}
+
+footer div a {
+    position: relative;
+    text-decoration: none;
+    color: inherit; /* Or your desired text color */
+}
+
+footer div a:hover {
+    color: #625dc3; /* Optional: change color on hover */
+}
+
+footer div a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background-color: #ffffff; /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+footer div a:hover::before {
+    width: 100%; /* Full width when hovering */
+}
+
+
+section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
